@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>contact</title>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+</head>
+	<style type="text/css">
+		.contact_btn{
+			position: fixed;
+			display: block;
+			top: 160px;
+			right: 0;
+			z-index: 100;
+			text-align: center;
+			height: 70px;
+			width: 35px;
+			border-radius: 35px 0 0 35px;
+			background-color: rgb(112,173,42);
+			background-image: url("./images/chat_float_btn.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			cursor: pointer;
+
+		}
+		.chattrans{
+			position: fixed;
+			width: 92px;
+			top: 150px;
+			right: -1192px;
+		}
+		.float_window{
+			background-color:#70AD2A;
+			width: 72px;
+			padding:15px 1px 1px 1px;
+			border-radius: 5px;	
+		}
+		.float_window .inner_window{
+			width: 72px;
+			border-radius: 5px 5px 0 0;
+			padding-top: 4px;
+			min-height: 90px;
+			background: #fff;
+		}
+		.float_window .demo_window{
+			background-color: #70AD2A;
+			width: 43px;
+			margin: 0 auto;
+
+		}
+		.float_window .demo_window .blank6{
+			margin:0 auto;
+			clear: both;
+			height: 6px;
+			font-size: 1px;
+			overflow: hidden;
+			background: #fff;
+		}
+		.float_window a{
+			display: block;
+			width: 43px;
+			height: 43px;
+		}
+		.float_window .Email{
+			background: url("./images/chat_0.png") no-repeat center -144px;
+		}
+
+		.float_window .Skype{
+			background: url("./images/chat_0.png") no-repeat center -96px;
+		}
+		.float_window .go_top{
+			display: block;
+			width: 100%;
+			height: 24px;
+			line-height: 24px;
+			color: #fff;
+			text-align: center;
+			font-size: 14px;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+<div class="chattrans">
+	<div class="float_window">
+		<div class="inner_window">
+			<div class="demo_window">
+				<a class="Email" href=${Email_location} title="" target="_blank"></a> 
+				<div class="blank6"></div>
+				<a class="Email" href="mailto:sasha@SOL888.com" title="" target="_blank"></a> 
+				<div class="blank6"></div>
+				<a class="Skype" href=${Skype_location} title="" target="_blank"></a>
+				<div class="blank6"></div> 
+			</div>
+		</div>
+		<a href="#" class="go_top" >TOP</a>
+		</div>
+	</div>
+	<div class="contact_btn" ></div>
+</body>
+
+
+
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		var go_top=$('.go_top');
+		var btn=$('.contact_btn');
+		var chattrans=$('.chattrans');
+         btn.click(function(){
+         	btn.css("display","none");
+
+         	chattrans.animate({right:0},200);
+         })
+         chattrans.mouseleave(function(){
+         	chattrans.animate({right:'-92px'},200);
+         	btn.css("display","block");
+         })
+         go_top.click(function(){
+         	$(body,html).animate(function(){
+         		scrollTop:0
+         	},1000);
+         	return false;
+         })
+	})
+
+</script>
+</html>
